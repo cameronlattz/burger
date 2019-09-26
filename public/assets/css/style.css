@@ -125,3 +125,14 @@ input {
     font-size: 2em;
     font-family: "Rancho"
 }
+#githubLink {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: "Arial";
+    color: #f6f6f6;
+    font-size: 1.5em;
+}
+#githubLink:hover {
+    text-decoration: none;
+}
