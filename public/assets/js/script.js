@@ -9,12 +9,15 @@
                 submitBurger(burgerName);
             }
         })
+        // add a click listener to all the .burger elements in the left burger container
         document.querySelectorAll("#burgerContainer .burger").forEach(burger => {
             burger.addEventListener("click", burgerClick);
         });
     }
 
+    // add a burger to the burger list
     const addBurger = function(burgerId, burgerName) {
+        // make a copy of the .burger element
         const burgerClone = document.getElementsByClassName("burger")[0].cloneNode(true);
         burgerClone.setAttribute("data-id", burgerId);
         burgerClone.getElementsByClassName("burger-name")[0].innerText = burgerName;
@@ -22,6 +25,7 @@
         burgerClone.addEventListener("click", burgerClick);
     }
 
+    // post a burger to the database
     const submitBurger = function(burgerName) {
         fetch("/api/burgers", {
             method: "POST",
@@ -34,6 +38,7 @@
         });
     }
 
+    // burger eating animation
     const burgerAnimation = function(burger) {
         const burgerName = burger.getElementsByClassName("burger-name")[0].innerHTML;
         burger.remove();
@@ -47,14 +52,17 @@
             burgerImg.src = "assets/images/eating2.png";
         }, delay*2);
         setTimeout(function() {
+            // set the burger in the man's hand to a transparent 1x1 png
             burgerImg.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
             const eatenElement = document.getElementById("eaten");
             const newElement = document.getElementsByClassName("burger")[0].cloneNode(true);
             newElement.getElementsByClassName("burger-name")[0].innerText = burgerName;
+            // add a new burger to the man's stomach
             eatenElement.appendChild(newElement);
         }, delay*3);
     }
 
+    // burger click handler
     const burgerClick = function(event) {
         const burger = event.target.closest(".burger");
         const id = burger.getAttribute("data-id");

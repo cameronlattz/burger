@@ -10,6 +10,7 @@ const orm = {
   },
   insertOne: function(burger, func) {
     const query = "INSERT INTO " + tableName + " (burger_name, devoured) VALUES (?,?)";
+    // default devoured to 0
     burger.devoured = burger.devoured || 0;
     connection.query(query, [
       burger.burger_name, burger.devoured

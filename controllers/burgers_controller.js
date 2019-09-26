@@ -3,6 +3,7 @@ const path = require("path");
 const router = express.Router();
 const burger = require("../models/burger.js");
 
+// helper function to create a burger object
 function buildBurger(req) {
     return {
         id: req.params.id || req.body.id,
@@ -13,6 +14,7 @@ function buildBurger(req) {
 
 router.get("/", function(req, res) {
     burger.all(burgers => {
+        // filter out the notEaten and eaten for use in the view
         const notEaten = burgers.filter(burger => !burger.devoured);
         const eaten = burgers.filter(burger => burger.devoured);
         res.render("index", {notEaten, eaten})
@@ -33,6 +35,7 @@ router.put("/api/burgers/:id", function(req, res) {
     });
 });
 
+// allow external js/css/images
 router.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../" + req.url));
 });

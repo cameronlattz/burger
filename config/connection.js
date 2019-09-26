@@ -1,4 +1,5 @@
 const mysql = require("mysql");
+// localhost connection info
 let localhost = {
   host: "localhost",
   port: 3306,
@@ -6,6 +7,7 @@ let localhost = {
   password: "root",
   database: "burgers_db"
 };
+// if we are using Jaws, use its connection info
 const connection = mysql.createConnection(process.env.JAWSDB_URL || localhost);
 
 connection.connect(function(err) {
