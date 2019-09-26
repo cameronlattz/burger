@@ -1,11 +1,7 @@
 # Eat-Da-Burger
 
 ### TODO:
-* Make layout
-* Set up script
-* Style layout
-* Add animation
-* Add favicon
+* Recolor
 * Deploy to Heroku
 * Comment code
 * Write readme

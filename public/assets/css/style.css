@@ -1,31 +1,35 @@
-@font-face {
-    font-family: "Insaniburger";
-    src: url("../fonts/Insanibc.ttf") format('truetype');
-}
-
 #flexContainer {
-    display: flex;
+    position: relative;
 }
 #flexContainer > div {
     flex: 1;
 }
 .container {
     margin: 3% 10%;
+    margin-top: 0px;
     border: 3px solid #333333;
     background-color: #f6f6f6;
 }
-#eaten {
+#eatenContainer {
     background-color: #0e74bc;
+    position: relative;
+    text-align: right;
+    width: 557px;
+    margin-left: auto;
+}
+#eaten {
     color: #222222;
+    font-size: 1.25em;
 }
 .burger {
     position: relative;
     height: 111px;
     width: 153px;
-    color: #333333;
-}
-.burger:hover {
     color: #f6f6f6;
+    margin: 0 auto;
+}
+#burgerContainer .burger:hover {
+    color: #333333;
     cursor: pointer;
 }
 .burger-image {
@@ -37,12 +41,19 @@
     padding-top: 30px;
     font-size: 1.25em;
     position: relative;
+    text-shadow: 1px 1px #333333;
+    text-align: center;
 }
 .eat-button {
     font-size: 1.5em;
 }
 #burgerContainer {
-    margin-top: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow: auto;
+    height: 100%;
 }
 #eaten {
     padding: 0 3%;
@@ -53,12 +64,24 @@ body {
     background-color: #f8a940;
     text-align: center;
     color: #222222;
-    font-family: "Insaniburger";
-}
-h1 {
-    text-align: left;
-    color: #333333;
+    font-family: "Arial"
 }
 h1, h3 {
     margin: 0;
+}
+#eatingBurger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 557px;
+    height: 420px;
+    background-color: #f6f6f6;
+}
+#eatingMan {
+    position: relative;
+    z-index: 2;
+}
+#eaten .eat-button {
+    display: none;
 }

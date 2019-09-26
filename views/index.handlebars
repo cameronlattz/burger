@@ -1,25 +1,36 @@
+<h1>Eat-Da-Burger!</h1>
 <div class="container">
-    <h1>Eat-Da-Burger!</h1>
     <div id="flexContainer">
         <div id="burgerContainer">
-            <div class="burger">
+            {{#each notEaten}}
+            <div class="burger burger-not-eaten" data-id="{{{this.id}}}">
                 <img class="burger-image" src="assets/images/burger.png">
                 <div class="burger-text">
-                    <div class="burger-name">Burger Name</div>
+                    <div class="burger-name">{{{this.burger_name}}}</div>
                     <div class="eat-button">EAT</div>
                 </div>
             </div>
+            {{/each}}
         </div>
         <div id="eatenContainer">
             <img id="eatingMan" src="assets/images/eatingman.png">
+            <img id="eatingBurger" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
             <div id="eaten">
-                <div class="burger-eaten">Burger Name</div>
+                {{#each eaten}}
+                <div class="burger burger-eaten" data-id="{{{this.id}}}">
+                    <img class="burger-image" src="assets/images/burger.png">
+                    <div class="burger-text">
+                        <div class="burger-name">{{{this.burger_name}}}</div>
+                        <div class="eat-button">EAT</div>
+                    </div>
+                </div>
+                {{/each}}
             </div>
         </div>
     </div>
 </div>
 <div id="newBurgerContainer">
-    <form id="newBurger">
+    <form id="burgerForm">
         <h3>Add New Burger:</h3>
         <input id="burgerName"><input type="submit" value="Add">
     </form>
