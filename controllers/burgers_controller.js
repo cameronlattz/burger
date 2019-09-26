@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const router = express.Router();
 const burger = require("../models/burger.js");
 
@@ -26,6 +27,10 @@ router.put("/api/burgers/:id", function(req, res) {
             res.status(200).end();
         }
     });
+});
+
+router.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "../" + req.url));
 });
 
 module.exports = router;

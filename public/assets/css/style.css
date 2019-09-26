@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "Insaniburger";
+    src: url("../fonts/Insanibc.ttf") format('truetype');
+}
+
+#flexContainer {
+    display: flex;
+}
+#flexContainer > div {
+    flex: 1;
+}
+.container {
+    margin: 3% 10%;
+    border: 3px solid #333333;
+    background-color: #f6f6f6;
+}
+#eaten {
+    background-color: #0e74bc;
+    color: #222222;
+}
+.burger {
+    position: relative;
+    height: 111px;
+    width: 153px;
+    color: #333333;
+}
+.burger:hover {
+    color: #f6f6f6;
+    cursor: pointer;
+}
+.burger-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.burger-text {
+    padding-top: 30px;
+    font-size: 1.25em;
+    position: relative;
+}
+.eat-button {
+    font-size: 1.5em;
+}
+#burgerContainer {
+    margin-top: 150px;
+}
+#eaten {
+    padding: 0 3%;
+    padding-bottom: 3%;
+    margin-top: -5px;
+}
+body {
+    background-color: #f8a940;
+    text-align: center;
+    color: #222222;
+    font-family: "Insaniburger";
+}
+h1 {
+    text-align: left;
+    color: #333333;
+}
+h1, h3 {
+    margin: 0;
+}
