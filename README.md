@@ -1,6 +1,6 @@
 # Eat-Da-Burger
+https://burger-cl.herokuapp.com/
 
 ### TODO:
-* Deploy to Heroku
 * Comment code
 * Write readme

@@ -65,7 +65,8 @@ body {
     background-color: #f8a940;
     text-align: center;
     color: #222222;
-    font-family: "Rancho"
+    font-family: "Rancho";
+    margin: 0;
 }
 h1, h2 {
     margin: 0;
@@ -114,7 +115,7 @@ input[type="submit"]:active {
 }
 input {
 	outline: none;
-	padding: 7px;
+	padding: 0 7px;
 	border: none;
     border-bottom: 1px solid #333333;
     color: #333333;
